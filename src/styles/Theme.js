@@ -1,0 +1,80 @@
+// src/styles/Theme.js
+const theme = {
+    colors: {
+      primary: '#ff3366',
+      secondary: '#ff6b6b',
+      tertiary: '#ffaa85',
+      background: '#f8f9fa',
+      backgroundAlt: '#ffffff',
+      text: '#333333',
+      textLight: '#6c757d',
+      border: '#e9ecef',
+      success: '#38b000',
+      warning: '#ffaa00',
+      error: '#e63946',
+    },
+    gradients: {
+      primary: 'linear-gradient(45deg, #ff3366, #ff6b6b)',
+      secondary: 'linear-gradient(45deg, #ff6b6b, #ffaa85)',
+    },
+    shadows: {
+      small: '0 2px 8px rgba(0, 0, 0, 0.1)',
+      medium: '0 4px 12px rgba(0, 0, 0, 0.15)',
+      large: '0 8px 24px rgba(0, 0, 0, 0.2)',
+      button: '0 4px 15px rgba(255, 51, 102, 0.3)',
+      buttonHover: '0 7px 20px rgba(255, 51, 102, 0.4)',
+    },
+    borderRadius: {
+      small: '4px',
+      medium: '8px',
+      large: '16px',
+      round: '30px',
+    },
+    typography: {
+      fontFamily: "'Poppins', sans-serif",
+      fontSize: {
+        xs: '0.75rem',
+        sm: '0.875rem',
+        md: '1rem',
+        lg: '1.125rem',
+        xl: '1.25rem',
+        '2xl': '1.5rem',
+        '3xl': '1.875rem',
+        '4xl': '2.25rem',
+        '5xl': '3rem',
+      },
+      fontWeight: {
+        light: 300,
+        regular: 400,
+        medium: 500,
+        semibold: 600,
+        bold: 700,
+      },
+    },
+    breakpoints: {
+      xs: '0px',
+      sm: '576px',
+      md: '768px',
+      lg: '992px',
+      xl: '1200px',
+      xxl: '1400px',
+    },
+    spacing: {
+      xs: '4px',
+      sm: '8px',
+      md: '16px',
+      lg: '24px',
+      xl: '32px',
+      '2xl': '48px',
+      '3xl': '64px',
+      '4xl': '96px',
+      '5xl': '128px',
+    },
+    transitions: {
+      fast: '0.2s ease',
+      default: '0.3s ease',
+      slow: '0.5s ease',
+    },
+  };
+  
+  export default theme;
