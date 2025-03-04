@@ -16,7 +16,7 @@ const FEATURED_EVENTS = [
     date: "15 Jul 2025",
     time: "18:00",
     location: "Arena Lima Norte",
-    price: "120.00",
+    price: "125.00",
     isFeatured: true,
     isFavorite: false,
   },

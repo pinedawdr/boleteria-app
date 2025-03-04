@@ -213,7 +213,7 @@ const Footer = () => {
         <FooterColumn>
           <FooterTitle>Contacto</FooterTitle>
           <ContactItem>
-            <strong>Dirección:</strong> Av. Principal 123, Lima, Perú
+            <strong>Dirección:</strong> Cusco - Perú
           </ContactItem>
           <ContactItem>
             <strong>Teléfono:</strong> +51 (01) 123-4567
