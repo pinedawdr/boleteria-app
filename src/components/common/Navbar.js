@@ -1,6 +1,6 @@
 // src/components/common/Navbar.js
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMenu, FiX, FiSearch, FiUser, FiShoppingCart, FiHeart, FiChevronDown } from 'react-icons/fi';
@@ -337,10 +337,11 @@ const CATEGORIES = [
   { title: "Exposiciones", section: "categories-section" }
 ];
 
-// Datos de las secciones de navegación
+// Datos de las secciones de navegación - ACTUALIZADO con la sección de pasajes
 const NAV_SECTIONS = [
   { title: "Inicio", section: "hero-section" },
   { title: "Eventos", section: "events-section" },
+  { title: "Pasajes", path: "/pasajes" }, // Nueva sección con path directo
   { title: "Categorías", section: "categories-section" },
   { title: "Próximos", section: "upcoming-section" },
   { title: "Testimonios", section: "testimonials-section" },
@@ -355,6 +356,8 @@ const Navbar = ({ transparent = false }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeSection, setActiveSection] = useState("hero-section");
   const categoriesRef = useRef(null);
+  const location = useLocation();
+  const navigate = useNavigate();
   
   // Detectar scroll para cambiar apariencia del navbar y detectar sección activa
   useEffect(() => {
@@ -403,16 +406,21 @@ const Navbar = ({ transparent = false }) => {
     return activeSection === sectionId;
   };
   
-  // Manejar el scroll a una sección
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      // Cerrar menús abiertos
-      setMobileMenuOpen(false);
-      setCategoriesOpen(false);
-      
+  // Manejar el scroll a una sección - ACTUALIZADO para manejar rutas
+  const scrollToSection = (sectionId, path) => {
+    // Cerrar menús abiertos
+    setMobileMenuOpen(false);
+    setCategoriesOpen(false);
+    
+    if (path) {
+      // Navegar a una ruta específica
+      navigate(path);
+    } else if (sectionId) {
       // Desplazarse suavemente a la sección
-      section.scrollIntoView({ behavior: 'smooth' });
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   };
   
@@ -442,8 +450,8 @@ const Navbar = ({ transparent = false }) => {
             {NAV_SECTIONS.map((navItem, index) => (
               <NavLink 
                 key={index}
-                onClick={() => scrollToSection(navItem.section)}
-                active={isActive(navItem.section)} 
+                onClick={() => scrollToSection(navItem.section, navItem.path)}
+                active={navItem.path ? location.pathname === navItem.path : isActive(navItem.section)}
                 transparent={transparent && !scrolled}
               >
                 {navItem.title}
@@ -538,8 +546,8 @@ const Navbar = ({ transparent = false }) => {
                 {NAV_SECTIONS.map((navItem, index) => (
                   <MobileNavLink 
                     key={index}
-                    onClick={() => scrollToSection(navItem.section)}
-                    active={isActive(navItem.section)}
+                    onClick={() => scrollToSection(navItem.section, navItem.path)}
+                    active={navItem.path ? location.pathname === navItem.path : isActive(navItem.section)}
                   >
                     {navItem.title}
                   </MobileNavLink>

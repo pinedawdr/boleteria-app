@@ -1,4 +1,4 @@
-// src/components/landing/Hero.js
+// src/components/landing/Hero.js 
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
@@ -17,14 +17,14 @@ const HeroContainer = styled.section`
   overflow: hidden;
 `;
 
-// Fondo con efecto de parallax
+// Fondo con efecto de parallax - Actualizado con overlay más moderno
 const HeroBackground = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+  background: linear-gradient(rgba(22, 34, 42, 0.7), rgba(22, 34, 42, 0.85)), 
               url('/images/hero-background.jpg') no-repeat center center/cover;
   z-index: -2;
   
@@ -35,12 +35,12 @@ const HeroBackground = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at center, rgba(255, 51, 102, 0.2), transparent 60%);
+    background: radial-gradient(circle at center, rgba(233, 64, 87, 0.3), transparent 70%);
     z-index: -1;
   }
 `;
 
-// Elementos decorativos
+// Elementos decorativos - Actualizado con nuevos colores
 const HeroDecoration = styled.div`
   position: absolute;
   border-radius: 50%;
@@ -92,7 +92,7 @@ const HeroTitle = styled(motion.h1)`
   span {
     position: relative;
     display: inline-block;
-    background: linear-gradient(120deg, #ff3366, #ff6b6b);
+    background: linear-gradient(120deg, #e94057, #f27121);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
@@ -206,6 +206,7 @@ const SearchButton = styled(Button)`
   }
 `;
 
+// Actualizado con estilo más moderno para las etiquetas
 const PopularSearches = styled(motion.div)`
   display: flex;
   justify-content: center;
@@ -226,11 +227,13 @@ const PopularTag = styled.button`
   backdrop-filter: blur(5px);
   
   &:hover {
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: rgba(233, 64, 87, 0.25);
     transform: translateY(-2px);
+    border-color: ${props => props.theme.colors.primary};
   }
 `;
 
+// Actualizado con estilo más moderno para los contadores
 const EventsCounter = styled.div`
   display: flex;
   justify-content: center;
@@ -245,7 +248,7 @@ const EventsCounter = styled.div`
 
 const CounterItem = styled(motion.div)`
   text-align: center;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(22, 34, 42, 0.4);
   padding: 20px 30px;
   border-radius: ${props => props.theme.borderRadius.medium};
   backdrop-filter: blur(10px);
@@ -304,7 +307,7 @@ const ScrollDownIndicator = styled(motion.div)`
 `;
 
 // Palabras populares para búsqueda
-const POPULAR_SEARCHES = ["Conciertos", "Festivales", "Teatro", "Deportes", "Familia"];
+const POPULAR_SEARCHES = ["Conciertos", "Festivales", "Teatro", "Deportes", "Familia", "Pasajes"];
 
 const Hero = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -320,6 +323,11 @@ const Hero = () => {
   
   // Función para usar una búsqueda popular
   const handlePopularSearch = (term) => {
+    if (term === "Pasajes") {
+      navigate('/pasajes');
+      return;
+    }
+    
     setSearchTerm(term);
     // También podríamos navegar directamente
     // navigate(`/eventos?search=${term}`);
@@ -430,8 +438,8 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
           >
-            <CounterNumber>150K+</CounterNumber>
-            <CounterLabel>Usuarios activos</CounterLabel>
+            <CounterNumber>500+</CounterNumber>
+            <CounterLabel>Rutas de viaje</CounterLabel>
           </CounterItem>
           
           <CounterItem

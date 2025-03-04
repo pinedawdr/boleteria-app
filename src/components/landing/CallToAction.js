@@ -1,4 +1,4 @@
-// src/components/landing/CallToAction.js
+// src/components/landing/CallToAction.js 
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
@@ -108,10 +108,30 @@ const AppButton = styled.a`
   color: ${props => props.theme.colors.text};
   transition: all ${props => props.theme.transitions.default};
   box-shadow: ${props => props.theme.shadows.medium};
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
   
   &:hover {
     transform: translateY(-3px);
     box-shadow: ${props => props.theme.shadows.large};
+    
+    &:before {
+      opacity: 1;
+    }
   }
 `;
 
@@ -181,7 +201,7 @@ const CallToAction = () => {
               transition={{ duration: 0.5, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              Compra tus entradas, recibe notificaciones de tus eventos favoritos y accede a promociones exclusivas desde tu dispositivo móvil.
+              Compra tus entradas, pasajes, recibe notificaciones y accede a promociones exclusivas desde tu dispositivo móvil.
             </Subtitle>
             
             <AppButtons

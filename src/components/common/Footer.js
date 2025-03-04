@@ -1,12 +1,12 @@
-// src/components/common/Footer.js
+// src/components/common/Footer.js - Actualizado con nuevo esquema de colores
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { FiFacebook, FiTwitter, FiInstagram, FiYoutube, FiLinkedin } from 'react-icons/fi';
 
 const FooterContainer = styled.footer`
-  background-color: #1a1a2e;
-  color: #e9ecef;
+  background: ${props => props.theme.gradients.footer};
+  color: ${props => props.theme.colors.footerText};
   padding: 70px 0 30px;
 `;
 
@@ -98,7 +98,7 @@ const FooterLinks = styled.div`
 `;
 
 const FooterLink = styled(Link)`
-  color: #e9ecef;
+  color: ${props => props.theme.colors.footerText};
   opacity: 0.8;
   transition: all ${props => props.theme.transitions.default};
   font-size: ${props => props.theme.typography.fontSize.sm};
@@ -147,7 +147,7 @@ const FooterBottomLinks = styled.div`
 `;
 
 const FooterBottomLink = styled(Link)`
-  color: #e9ecef;
+  color: ${props => props.theme.colors.footerText};
   opacity: 0.8;
   font-size: ${props => props.theme.typography.fontSize.sm};
   
@@ -166,7 +166,7 @@ const Footer = () => {
             <span>Boleteria</span>
           </FooterLogo>
           <FooterDescription>
-            La plataforma de venta de boletos más completa del país. Encuentra todos los eventos que buscas en un solo lugar.
+            La plataforma de venta de boletos más completa del país. Encuentra todos los eventos y pasajes que buscas en un solo lugar.
           </FooterDescription>
           <SocialIcons>
             <SocialIcon href="https://facebook.com" target="_blank" aria-label="Facebook">
@@ -191,6 +191,7 @@ const Footer = () => {
           <FooterTitle>Enlaces rápidos</FooterTitle>
           <FooterLinks>
             <FooterLink to="/eventos">Eventos</FooterLink>
+            <FooterLink to="/pasajes">Pasajes</FooterLink>
             <FooterLink to="/promociones">Promociones</FooterLink>
             <FooterLink to="/calendario">Calendario</FooterLink>
             <FooterLink to="/nosotros">Sobre nosotros</FooterLink>
@@ -206,7 +207,8 @@ const Footer = () => {
             <FooterLink to="/categoria/teatro">Teatro</FooterLink>
             <FooterLink to="/categoria/festivales">Festivales</FooterLink>
             <FooterLink to="/categoria/familia">Familiar</FooterLink>
-            <FooterLink to="/categoria/exposiciones">Exposiciones</FooterLink>
+            <FooterLink to="/pasajes/bus">Buses</FooterLink>
+            <FooterLink to="/pasajes/barco">Embarcaciones</FooterLink>
           </FooterLinks>
         </FooterColumn>
         

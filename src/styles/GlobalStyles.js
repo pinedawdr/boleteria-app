@@ -36,7 +36,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .gradient-btn {
-    background: linear-gradient(45deg, #ff3366, #ff6b6b);
+    background: linear-gradient(45deg, #eb004b, #ff6b6b);
     color: white;
     border-radius: 30px;
     padding: 10px 25px;
@@ -55,7 +55,7 @@ const GlobalStyles = createGlobalStyle`
     border-radius: 8px;
     padding: 12px 15px;
     background-image: linear-gradient(white, white), 
-                      linear-gradient(45deg, #ff3366, #ff6b6b);
+                      linear-gradient(45deg, #eb004b, #ff6b6b);
     background-origin: border-box;
     background-clip: padding-box, border-box;
     transition: all 0.3s ease;

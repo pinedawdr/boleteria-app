@@ -7,8 +7,11 @@ import theme from './styles/Theme';
 import { AppProvider } from './context/AppContext';
 import Landing from './pages/Landing';
 import TicketPage from './pages/TicketPage';
+import TravelPage from './pages/TravelPage';
+import TravelSeatSelectionPage from './pages/TravelSeatSelectionPage';
+import TravelConfirmationPage from './pages/TravelConfirmationPage';
 
-// Importar nuevas páginas (pueden ser creadas después)
+// Otras páginas placeholder
 const Events = () => <div>Página de eventos</div>;
 const CategoryPage = () => <div>Página de categoría</div>;
 const PromoPage = () => <div>Página de promociones</div>;
@@ -55,8 +58,9 @@ function App() {
             <Route path="/nosotros" element={<AboutPage />} />
             <Route path="/contacto" element={<ContactPage />} />
             <Route path="/ingresar" element={<LoginPage />} />
-            
-            {/* Rutas antiguas (redirección) */}
+            <Route path="/pasajes" element={<TravelPage />} />
+            <Route path="/pasajes/seleccion-asientos/:tripId" element={<TravelSeatSelectionPage />} />
+            <Route path="/pasajes/confirmacion" element={<TravelConfirmationPage />} />
             <Route path="/evento/:id" element={<TicketPage />} />
             
             {/* Página 404 */}

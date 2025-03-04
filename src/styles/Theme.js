@@ -1,17 +1,17 @@
-// src/styles/Theme.js
+// src/styles/Theme.js 
 const theme = {
   colors: {
-    // Color principal - rojo moderno con toque rosado
-    primary: '#ff3366',
-    // Colores secundarios complementarios
-    secondary: '#ff6b8b',
-    tertiary: '#fd8c9e',
+    // Color principal - rojo específico
+    primary: '#eb004b',
+    // Colores secundarios - naranja específico
+    secondary: '#ed6817',
+    tertiary: '#f89e5b',
     // Fondos
     background: '#f8f9fa',
     backgroundAlt: '#ffffff',
     // Fondo moderno - reemplazo del azul oscuro
-    darkBg: '#2d3436',
-    accentBg: '#fd79a8',
+    darkBg: '#16222A',
+    accentBg: '#eb004b',
     neutralBg: '#dfe6e9',
     // Textos
     text: '#2d3436',
@@ -21,28 +21,35 @@ const theme = {
     success: '#00b894',
     warning: '#fdcb6e',
     error: '#ff5252',
+    
+    // Color para footer
+    footerBg: '#16222A',
+    footerText: '#e9ecef',
   },
   gradients: {
-    // Gradiente principal - rojo a rosa moderno
-    primary: 'linear-gradient(45deg, #ff3366, #fd79a8)',
+    // Gradiente principal - del rojo al naranja específicos
+    primary: 'linear-gradient(45deg, #eb004b, #ed6817)',
     // Gradiente secundario - variación del principal
-    secondary: 'linear-gradient(45deg, #fd79a8, #ff6b8b, #ff3366)',
+    secondary: 'linear-gradient(45deg, #ed6817, #f89e5b, #eb004b)',
     // Fondos con degradado
-    modern: 'linear-gradient(135deg, #2d3436, #636e72, #81ecec)',
+    modern: 'linear-gradient(135deg, #16222A, #3A6073)',
     subtle: 'linear-gradient(135deg, #dfe6e9, #f8f9fa)',
-    vibrant: 'linear-gradient(135deg, #ff3366, #fd79a8, #ff6b8b)',
+    vibrant: 'linear-gradient(135deg, #eb004b, #ed6817, #f89e5b)',
     // Efectos de vidrio
     glass: 'linear-gradient(120deg, rgba(255,255,255,0.3), rgba(255,255,255,0))',
+    // Gradiente para footer
+    footer: 'linear-gradient(to right, #16222A, #3A6073)',
   },
   shadows: {
     small: '0 2px 8px rgba(0, 0, 0, 0.1)',
     medium: '0 4px 12px rgba(0, 0, 0, 0.15)',
     large: '0 8px 24px rgba(0, 0, 0, 0.2)',
-    button: '0 10px 25px rgba(255, 51, 102, 0.4)',
-    buttonHover: '0 15px 30px rgba(255, 51, 102, 0.6)',
+    // Se eliminan las sombras específicas para botones
+    button: 'none',
+    buttonHover: 'none',
     card: '0 10px 30px rgba(0, 0, 0, 0.1)',
     nav: '0 10px 30px rgba(0, 0, 0, 0.15)',
-    glow: '0 0 20px rgba(255, 51, 102, 0.5)',
+    glow: '0 0 20px rgba(235, 0, 75, 0.5)',
   },
   borderRadius: {
     small: '4px',
@@ -102,7 +109,7 @@ const theme = {
       border: 1px solid rgba(255, 255, 255, 0.2);
     `,
     glow: `
-      box-shadow: 0 0 25px rgba(255, 51, 102, 0.5);
+      box-shadow: 0 0 25px rgba(235, 0, 75, 0.5);
     `,
     softShadow: `
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
